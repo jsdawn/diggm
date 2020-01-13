@@ -1,29 +1,20 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.scss";
+// app.js 入口页面
 
-import { Button } from "antd-mobile";
+import React, { Component } from "react";
+import { Provider } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button type="primary" inline size="small">primary</Button>
-      </header>
-    </div>
-  );
+import "@/style/index.css";
+import Router from "@/router/Router.js";
+import store from "@/store/index.js";
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Router />
+      </Provider>
+    );
+  }
 }
 
 export default App;
