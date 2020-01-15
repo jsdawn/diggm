@@ -17,8 +17,6 @@ class FrontendAuth extends Component {
 
     const targetRouterConfig = config.find(v => v.path === pathname);
 
-    console.log(targetRouterConfig);
-
     // redirect router  - redirect
     if (targetRouterConfig && targetRouterConfig.redirect) {
       return <Redirect to={targetRouterConfig.redirect} />;
