@@ -21,3 +21,8 @@ export const getTestList = function(categoryId, testType, flag, page, size) {
   let url = BASE_URL + "/v2/test/list";
   return request(url, params);
 };
+
+export const getTestDetail = function(testId) {
+  let url = BASE_URL + "/v2/test/detail";
+  return request(url, { test_id: testId });
+};

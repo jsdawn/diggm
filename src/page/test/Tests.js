@@ -6,19 +6,14 @@ import "./Tests.scss";
 import { ListView, Icon } from "antd-mobile";
 import TestItem from "@/page/test/components/TestItem";
 
-import { addTests } from "@/store/actions.js";
 import { getTestList } from "@/api/index.js";
 
 function mapStateToProps(state) {
-  return {
-    tests: state.tests
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    addTests: item => dispatch(addTests(item))
-  };
+  return {};
 }
 
 class Tests extends Component {
@@ -68,7 +63,7 @@ class Tests extends Component {
   };
 
   handleItem = testId => {
-    console.log(testId);
+    this.props.history.push(`/details?id=${testId}`);
   };
 
   componentDidMount() {

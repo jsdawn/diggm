@@ -1,9 +1,8 @@
-// app.js 入口页面
+// app.js 页面入口页面
 
 import React, { Component } from "react";
 import { Provider } from "react-redux";
 
-import "@/style/index.scss";
 import Router from "@/router/Router.js";
 import store from "@/store/index.js";
 
