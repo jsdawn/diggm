@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Button } from "antd-mobile";
+
+import "./Tests.scss";
+
+import { ListView, Icon } from "antd-mobile";
+import TestItem from "@/page/test/components/TestItem";
 
 import { addTests } from "@/store/actions.js";
+import { getTestList } from "@/api/index.js";
 
 function mapStateToProps(state) {
   return {
@@ -19,34 +24,87 @@ function mapDispatchToProps(dispatch) {
 class Tests extends Component {
   constructor(props) {
     super(props);
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
+    });
     this.state = {
-      value: ""
+      dataSource: ds,
+      list: [],
+      upLoading: false,
+      hasMore: true,
+
+      categoryId: 0,
+      testType: null,
+      flag: null,
+      page: 0,
+      size: 10
     };
   }
 
-  changeValue = e => {
+  //上拉加载
+  onEndReached = () => {
+    if (this.state.upLoading || !this.state.hasMore) {
+      return;
+    }
+    this.fetchList();
+  };
+
+  fetchList = () => {
     this.setState({
-      value: e.target.value
+      upLoading: true,
+      page: this.state.page + 1
+    });
+
+    let { categoryId, testType, flag, page, size } = this.state;
+    getTestList(categoryId, testType, flag, page, size).then(res => {
+      let list = res.data;
+
+      this.setState({
+        upLoading: false,
+        list: this.state.list.concat(list),
+        hasMore: list.length >= size
+      });
     });
   };
 
-  addList = () => {
-    this.props.addTests(this.state.value);
+  handleItem = testId => {
+    console.log(testId);
   };
 
+  componentDidMount() {
+    this.fetchList();
+  }
+
   render() {
+    const { list, dataSource, hasMore, size } = this.state;
+
+    const ListFooter = () => {
+      return (
+        <div style={{ padding: 10, textAlign: "center" }}>
+          {hasMore ? <Icon type="loading" /> : "- 完 -"}
+        </div>
+      );
+    };
+
     return (
       <div>
-        <input type="text" placeholder="输入文字" onChange={this.changeValue} />
-        <Button type="primary" inline size="small" onClick={this.addList}>
-          添加测试
-        </Button>
-
-        <ul className="test-list">
-          {this.props.tests.map((item, index) => {
-            return <li key={index}>{item}</li>;
-          })}
-        </ul>
+        {list && list.length ? (
+          <ListView
+            dataSource={dataSource.cloneWithRows(list)}
+            renderRow={(rowData, id1, i) => {
+              return <TestItem row={rowData} handleItem={this.handleItem} />;
+            }}
+            pageSize={size}
+            renderFooter={() => <ListFooter />}
+            onEndReached={() => this.onEndReached()}
+            onEndReachedThreshold={20}
+            useBodyScroll={true}
+          />
+        ) : list && list.rows && !list.rows.length ? (
+          <div>
+            <p>暂无数据</p>
+          </div>
+        ) : null}
       </div>
     );
   }

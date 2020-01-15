@@ -1,8 +1,12 @@
 import axios from "axios";
 
 axios.interceptors.request.use(function(config) {
-  config.headers["Authorization"] = localStorage.getItem("accessToken");
-  config.headers["Authorization-User"] = localStorage.getItem("userToken");
+  let channel = localStorage.getItem("channel");
+
+  config.headers["Authorization"] = channel
+    ? JSON.parse(channel).channel_token
+    : "";
+
   return config;
 });
 
