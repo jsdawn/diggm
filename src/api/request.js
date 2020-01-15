@@ -17,7 +17,7 @@ const request = function(url, params, method) {
       axios
         .post(urlFormat, params)
         .then(function(response) {
-          resolve(response);
+          resolve(response.data);
         })
         .catch(function(error) {
           reject(error);
@@ -28,7 +28,7 @@ const request = function(url, params, method) {
       axios
         .get(urlFormat, { params: params })
         .then(function(response) {
-          resolve(response);
+          resolve(response.data);
         })
         .catch(function(error) {
           reject(error);

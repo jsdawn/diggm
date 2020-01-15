@@ -23,6 +23,8 @@ class Index extends Component {
       </div>
     );
   }
+
+  componentDidMount() {}
 }
 
 export default connect(mapStateToProps)(Index);

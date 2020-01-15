@@ -13,3 +13,10 @@ export const toggleTests = tests => {
     value: tests
   };
 };
+
+export const setChannel = channel => {
+  return {
+    type: ActionTypes.SET_CHANNEL,
+    value: channel
+  };
+};

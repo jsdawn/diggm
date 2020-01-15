@@ -1,16 +1,14 @@
 import React from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Switch } from "react-router-dom";
 
-import Home from "@/page/home/Index.js";
-import Details from "@/page/test/Details.js";
-import Tests from "@/page/test/Tests.js";
+import FrontendAuth from "@/router/FrontendAuth.js";
+
+import { routerConfig } from "@/router/routerConfig.js";
 
 const BasicRoute = () => (
   <HashRouter>
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/details" component={Details} />
-      <Route exact path="/tests" component={Tests} />
+      <FrontendAuth config={routerConfig} />
     </Switch>
   </HashRouter>
 );
