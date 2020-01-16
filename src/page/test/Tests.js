@@ -107,6 +107,7 @@ class Tests extends Component {
           renderRow={(rowData, id1, i) => {
             return <TestItem row={rowData} handleItem={this.handleItem} />;
           }}
+          initialListSize={size}
           pageSize={size}
           renderFooter={() => <ListFooter />}
           onEndReached={() => this.onEndReached()}
