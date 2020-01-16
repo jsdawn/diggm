@@ -1,1 +1,1 @@
-export const BASE_URL = "http://api.diggmind.com/api";
+export const BASE_URL = "https://api.diggmind.com/api";
