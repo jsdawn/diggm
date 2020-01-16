@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## You can now view dmwebapp in the browser.
+
+ Local:            `http://localhost:3000`
+ On Your Network:  `https://jsdawn.github.io/diggm`
+
+
 ## Available Scripts
 
 In the project directory, you can run:
