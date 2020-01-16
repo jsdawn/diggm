@@ -1,8 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./TestItem.scss";
 
-const TestItem = props => {
+TestItem.propTypes = {
+  row: PropTypes.object,
+  handleItem: PropTypes.func
+};
+
+function TestItem(props) {
   let { row, handleItem } = props;
 
   return (
@@ -27,6 +33,6 @@ const TestItem = props => {
       </div>
     </div>
   );
-};
+}
 
 export default TestItem;

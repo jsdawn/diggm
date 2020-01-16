@@ -3,6 +3,9 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="JSX" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/src/page/test/components/jjj.js" />
+  </component>
   <component name="WebPackConfiguration">
     <option name="path" value="$PROJECT_DIR$/webstorm.config.js" />
   </component>
