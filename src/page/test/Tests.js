@@ -35,7 +35,7 @@ class Tests extends Component {
       testType: null,
       flag: null,
       page: 0,
-      size: 10
+      size: 20
     };
   }
 
