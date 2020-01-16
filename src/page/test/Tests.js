@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import "./Tests.scss";
 
 import { ListView, Icon } from "antd-mobile";
+import DmNoticeBar from "@/components/DmNoticeBar";
 import TestItem from "@/page/test/components/TestItem";
 
 import { getTestList } from "@/api/index.js";
@@ -82,7 +83,9 @@ class Tests extends Component {
     };
 
     return (
-      <div>
+      <div className="tests-page has-notice-bar">
+        <DmNoticeBar />
+
         {list && list.length ? (
           <ListView
             dataSource={dataSource.cloneWithRows(list)}

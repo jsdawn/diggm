@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./Details.scss";
 
 import { Card, WingBlank, WhiteSpace } from "antd-mobile";
+import DmNoticeBar from "@/components/DmNoticeBar";
 
 import { getTestDetail } from "@/api/index.js";
 
@@ -42,23 +43,31 @@ class Details extends Component {
     }
 
     return (
-      <WingBlank size="lg">
-        <WhiteSpace size="lg" />
-        <Card>
-          <Card.Header
-            title={detail.title}
-            extra={<span>test id: {detail.id}</span>}
-          />
-          <Card.Body>
-            <div>This is content of `Card`</div>
-          </Card.Body>
-          <Card.Footer
-            content="footer content"
-            extra={<div>extra footer content</div>}
-          />
-        </Card>
-        <WhiteSpace size="lg" />
-      </WingBlank>
+      <div className="test-detail has-notice-bar">
+        <DmNoticeBar />
+
+        <WingBlank size="lg">
+          <WhiteSpace size="lg" />
+          <Card>
+            <Card.Header
+              title={detail.title}
+              thumb={detail.pic}
+              thumbStyle={{ width: "25%", marginRight: "10px" }}
+            />
+            <Card.Body>
+              <div
+                className="detail-content"
+                dangerouslySetInnerHTML={{ __html: detail.content }}
+              />
+            </Card.Body>
+            <Card.Footer
+              content={detail.like_num + "收藏"}
+              extra={detail.tested_num + "测过"}
+            />
+          </Card>
+          <WhiteSpace size="lg" />
+        </WingBlank>
+      </div>
     );
   }
 }

@@ -23,7 +23,7 @@ const TestItem = props => {
             {row.brief ? row.brief : "客官进来看看 吖"}
           </div>
         </div>
-        <div className="am-list-extra">{row.like_num}喜欢</div>
+        <div className="am-list-extra">{row.like_num}收藏</div>
       </div>
     </div>
   );

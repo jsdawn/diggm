@@ -1,1 +1,10 @@
 @import "~@/style/_reset.scss";
+
+.has-notice-bar {
+  position: relative;
+  padding-top: 36px;
+}
+
+.am-toast > span {
+  max-width: 70% !important;
+}
