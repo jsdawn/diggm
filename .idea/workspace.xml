@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b03837d7-0649-4ccd-9105-32d13ede8249" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/DmNoticeBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/test/Details.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/test/Details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/test/Details.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/test/Details.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/test/Tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/test/Tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/test/Tests.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/test/Tests.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/test/components/TestItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/test/components/TestItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="b03837d7-0649-4ccd-9105-32d13ede8249" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -39,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="220">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -166,17 +155,6 @@
               <item name="dmwebapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="dmwebapp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="dmwebapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dmwebapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dmwebapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dmwebapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -248,12 +226,12 @@
       <workItem from="1578985214786" duration="12308000" />
       <workItem from="1579054287446" duration="14370000" />
       <workItem from="1579080446991" duration="7274000" />
-      <workItem from="1579140953279" duration="6339000" />
+      <workItem from="1579140953279" duration="6592000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63231000" />
+    <option name="totallyTimeSpent" value="63484000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -266,7 +244,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1123" y="23" width="1426" height="1349" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20427047" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -662,8 +639,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="220">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
