@@ -6,6 +6,8 @@ import * as serviceWorker from "@/serviceWorker";
 import FastClick from "fastclick";
 
 import "@/style/index.scss";
+
+import "@/util/copyright.js";
 import "@/util/global.js";
 
 import App from "@/App";

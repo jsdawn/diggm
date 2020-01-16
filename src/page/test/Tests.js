@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 
 import "./Tests.scss";
 
-import { ListView, Icon } from "antd-mobile";
-import DmNoticeBar from "@/components/DmNoticeBar";
+import { ListView, Icon, Result } from "antd-mobile";
 import TestItem from "@/page/test/components/TestItem";
+import ActivityLoading from "@/components/ActivityLoading";
 
 import { getTestList } from "@/api/index.js";
 
@@ -16,6 +16,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {};
 }
+
+const myImg = src => <img src={src} style={{ width: "60px" }} alt="" />;
 
 class Tests extends Component {
   constructor(props) {
@@ -82,27 +84,35 @@ class Tests extends Component {
       );
     };
 
-    return (
-      <div className="tests-page has-notice-bar">
-        <DmNoticeBar />
+    if (list.length === 0 && hasMore) {
+      return <ActivityLoading />;
+    }
 
-        {list && list.length ? (
-          <ListView
-            dataSource={dataSource.cloneWithRows(list)}
-            renderRow={(rowData, id1, i) => {
-              return <TestItem row={rowData} handleItem={this.handleItem} />;
-            }}
-            pageSize={size}
-            renderFooter={() => <ListFooter />}
-            onEndReached={() => this.onEndReached()}
-            onEndReachedThreshold={20}
-            useBodyScroll={true}
-          />
-        ) : list && list.rows && !list.rows.length ? (
-          <div>
-            <p>暂无数据</p>
-          </div>
-        ) : null}
+    if (list.length === 0 && !hasMore) {
+      return (
+        <Result
+          img={myImg(
+            "https://gw.alipayobjects.com/zos/rmsportal/GIyMDJnuqmcqPLpHCSkj.svg"
+          )}
+          title="暂无数据"
+          message="关注微信公众号【DiggMind】，挖掘自我，认知自我"
+        />
+      );
+    }
+
+    return (
+      <div className="page-tests">
+        <ListView
+          dataSource={dataSource.cloneWithRows(list)}
+          renderRow={(rowData, id1, i) => {
+            return <TestItem row={rowData} handleItem={this.handleItem} />;
+          }}
+          pageSize={size}
+          renderFooter={() => <ListFooter />}
+          onEndReached={() => this.onEndReached()}
+          onEndReachedThreshold={20}
+          useBodyScroll={true}
+        />
       </div>
     );
   }

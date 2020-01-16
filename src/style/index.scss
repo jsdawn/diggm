@@ -1,5 +1,10 @@
 @import "~@/style/_reset.scss";
 
+.minipage {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
 .has-notice-bar {
   position: relative;
   padding-top: 36px;

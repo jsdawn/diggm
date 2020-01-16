@@ -20,7 +20,7 @@ class MyComponent extends Component {
           <p>请前往微信「粘贴」搜索</p>
         </div>
       );
-      Toast.success(customContent(), 13);
+      Toast.success(customContent(), 3);
     } else {
       const customContent = () => (
         <div>
@@ -39,7 +39,7 @@ class MyComponent extends Component {
           position: "fixed",
           top: 0,
           left: 0,
-          width: "100%",
+          right: 0,
           zIndex: 100
         }}
         marqueeProps={{ loop: true, style: { padding: "0 15px 0 8px" } }}

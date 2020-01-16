@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./Details.scss";
 
 import { Card, WingBlank, WhiteSpace } from "antd-mobile";
-import DmNoticeBar from "@/components/DmNoticeBar";
+import ActivityLoading from "@/components/ActivityLoading";
 
 import { getTestDetail } from "@/api/index.js";
 
@@ -39,20 +39,22 @@ class Details extends Component {
     let { detail } = this.state;
 
     if (!detail) {
-      return <div>加载...</div>;
+      return <ActivityLoading />;
     }
 
     return (
-      <div className="test-detail has-notice-bar">
-        <DmNoticeBar />
-
+      <div className="page-test-detail">
         <WingBlank size="lg">
           <WhiteSpace size="lg" />
           <Card>
             <Card.Header
               title={detail.title}
               thumb={detail.pic}
-              thumbStyle={{ width: "25%", marginRight: "10px" }}
+              thumbStyle={{
+                width: "25%",
+                maxWidth: "100px",
+                marginRight: "10px"
+              }}
             />
             <Card.Body>
               <div
